@@ -1,0 +1,23 @@
+{
+  "name": "js-interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon main.js",
+    "start": "mode main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "config": "^3.3.9",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.1",
+    "openai": "^3.3.0"
+  }
+}

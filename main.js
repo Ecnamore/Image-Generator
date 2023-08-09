@@ -4,7 +4,7 @@ import { engine } from 'express-handlebars'
 import { Configuration, OpenAIApi } from 'openai'
 
 const configuration = new Configuration({
-    apiKey: "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"
+    apiKey: "OPENAPI_KEY"
 })
 const openai = new OpenAIApi(configuration)
 

@@ -4,7 +4,7 @@ import { engine } from 'express-handlebars'
 import { Configuration, OpenAIApi } from 'openai'
 
 const configuration = new Configuration({
-    apiKey: "OPENAPI_KEY"
+    apiKey: config.get ('OPENAI_KEY'),
 })
 const openai = new OpenAIApi(configuration)
 
@@ -25,11 +25,13 @@ app.post('/', async (req, res) => {
     const number = req.body.number ?? 1
 
     try {
-       const response = await openai.createImage({
-            createImageRequest: CreateImageRequest
-        })
-
-        console.log(response)
+        const response = await openai.createImage({
+            prompt,
+            n: Number (number),
+            size,
+          });
+        
+         console.log(response)
 
         // Передача данных response в шаблон для отображения на клиенте
         res.render('index')   
